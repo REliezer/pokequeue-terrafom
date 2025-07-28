@@ -4,7 +4,7 @@ provider "azurerm" {
 }
 
 resource "azurerm_resource_group" "rg" {
-    name     = "rg-${ lower(var.project) }-${ var.environment }"
+    name     = "rg-${ lower(var.project) }-${var.name}-${ var.environment }"
     location = var.location
     tags = var.tags
 }

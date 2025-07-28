@@ -1,6 +1,8 @@
-*.tfvars
+.vscode
 .terraform
 .terraform.lock.hcl
+
+*.tfvars
 *.tfstate
 *.tfstate.*
 *.tfplan

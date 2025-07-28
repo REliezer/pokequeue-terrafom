@@ -8,7 +8,8 @@ resource "azurerm_storage_account" "saccount" {
     tags = var.tags
 }
 
-resource "azurerm_storage_account" "saccount2" {
+//para el function_app
+resource "azurerm_storage_account" "saccountfunc" {
     name                     = "safuncsettings${ var.environment }"
     resource_group_name      = azurerm_resource_group.rg.name
     location                 = var.location
@@ -17,7 +18,6 @@ resource "azurerm_storage_account" "saccount2" {
 
     tags = var.tags
 }
-
 
 resource "azurerm_storage_container" "c1" {
     name = "reportes"
