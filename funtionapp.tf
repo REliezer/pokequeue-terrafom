@@ -8,9 +8,16 @@ resource "azurerm_linux_function_app" "serverless" {
 
   site_config {
     application_stack {
-      python_version = "3.13"
+      python_version = "3.12"
     }
   }
+
+  app_settings = {
+        AZURE_STORAGE_CONNECTION_STRING = azurerm_storage_account.saccountfunc.primary_connection_string
+        BLOB_CONTAINER_NAME = azurerm_storage_container.c1.name
+        QueueAzureWebJobsStorage = azurerm_storage_account.saccount.primary_connection_string
+        STORAGE_ACCOUNT_NAME = azurerm_storage_account.saccount.name
+    }
 
   tags = var.tags
 }

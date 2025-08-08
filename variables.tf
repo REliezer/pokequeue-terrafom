@@ -37,9 +37,24 @@ variable "name" {
     default     = "refe" 
 }
 
+variable "admin_sql_user" {
+    type = string
+    description = "The user for the SQL admin account"
+}
+
 variable "admin_sql_password" {
     type = string
-    description = "The password for the SQL account"
+    description = "The password for the SQL admin account"
+}
+
+variable "user_sql" {
+    type = string
+    description = "The user for the SQL user account"
+}
+
+variable "user_sql_password" {
+    type = string
+    description = "The password for the SQL user account"
 }
 
 variable "secret_key" {
